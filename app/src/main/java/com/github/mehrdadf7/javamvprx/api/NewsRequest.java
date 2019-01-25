@@ -5,11 +5,11 @@ import com.github.mehrdadf7.okhttp.HttpStructure;
 
 import io.reactivex.Observable;
 
-public class NewsRepositoryData implements NewsDataSource {
+public class NewsRequest implements NewsDataSource {
 
     private HttpStructure httpStructure;
 
-    public NewsRepositoryData(HttpStructure httpStructure) {
+    public NewsRequest(HttpStructure httpStructure) {
         this.httpStructure = httpStructure;
     }
 
