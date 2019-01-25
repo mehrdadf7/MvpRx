@@ -1,7 +1,6 @@
-package com.github.mehrdadf7.javamvprx.home.model.repo;
+package com.github.mehrdadf7.javamvprx.api;
 
-import com.github.mehrdadf7.javamvprx.home.model.NewsApiResponse;
-import com.github.mehrdadf7.javamvprx.home.model.repo.remote.RemoteNewsDataRepository;
+import com.github.mehrdadf7.javamvprx.models.NewsApiResponse;
 import com.github.mehrdadf7.okhttp.OkHttpInjector;
 
 import io.reactivex.Observable;

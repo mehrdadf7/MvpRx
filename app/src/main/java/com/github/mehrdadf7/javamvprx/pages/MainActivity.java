@@ -1,4 +1,4 @@
-package com.github.mehrdadf7.javamvprx.home;
+package com.github.mehrdadf7.javamvprx.pages;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.github.mehrdadf7.javamvprx.R;
 import com.github.mehrdadf7.javamvprx.adapters.NewsAdapter;
-import com.github.mehrdadf7.javamvprx.home.model.NewsViewModel;
-import com.github.mehrdadf7.javamvprx.home.model.repo.NewsRepositoryImpl;
+import com.github.mehrdadf7.javamvprx.models.NewsViewModel;
+import com.github.mehrdadf7.javamvprx.api.NewsRepositoryImpl;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package com.github.mehrdadf7.javamvprx.home;
+package com.github.mehrdadf7.javamvprx.pages;
 
-import com.github.mehrdadf7.javamvprx.home.model.NewsApiResponse;
-import com.github.mehrdadf7.javamvprx.home.model.repo.NewsRepositoryImpl;
+import com.github.mehrdadf7.javamvprx.models.NewsApiResponse;
+import com.github.mehrdadf7.javamvprx.api.NewsRepositoryImpl;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

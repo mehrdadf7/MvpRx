@@ -1,4 +1,4 @@
-package com.github.mehrdadf7.javamvprx.home.model;
+package com.github.mehrdadf7.javamvprx.models;
 
 public class NewsViewModel {
 

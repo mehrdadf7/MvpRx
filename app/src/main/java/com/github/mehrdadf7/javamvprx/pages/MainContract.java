@@ -1,8 +1,8 @@
-package com.github.mehrdadf7.javamvprx.home;
+package com.github.mehrdadf7.javamvprx.pages;
 
 import com.github.mehrdadf7.javamvprx.base.BasePresenter;
 import com.github.mehrdadf7.javamvprx.base.BaseView;
-import com.github.mehrdadf7.javamvprx.home.model.NewsViewModel;
+import com.github.mehrdadf7.javamvprx.models.NewsViewModel;
 
 import java.util.List;
 

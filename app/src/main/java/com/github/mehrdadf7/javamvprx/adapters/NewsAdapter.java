@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mehrdadf7.javamvprx.R;
-import com.github.mehrdadf7.javamvprx.home.model.NewsViewModel;
+import com.github.mehrdadf7.javamvprx.models.NewsViewModel;
 
 import java.util.List;
 import java.util.Random;
