@@ -1,6 +1,6 @@
 package com.github.mehrdadf7.javamvprx.pages;
 
-import com.github.mehrdadf7.javamvprx.models.NewsApiResponse;
+import com.github.mehrdadf7.javamvprx.models.NewsResponse;
 import com.github.mehrdadf7.javamvprx.api.NewsRepositoryImpl;
 
 import io.reactivex.Observer;
@@ -24,15 +24,15 @@ public class MainPresenter implements MainContract.Presenter {
         newsRepository.getNews()
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.newThread())
-                .subscribe(new Observer<NewsApiResponse>() {
+                .subscribe(new Observer<NewsResponse>() {
                     @Override
                     public void onSubscribe(Disposable d) {
                         disposable = d;
                     }
 
                     @Override
-                    public void onNext(NewsApiResponse newsApiResponse) {
-                        view.showNews(newsApiResponse.getArticles());
+                    public void onNext(NewsResponse newsResponse) {
+                        view.showNews(newsResponse.getArticles());
                     }
 
                     @Override

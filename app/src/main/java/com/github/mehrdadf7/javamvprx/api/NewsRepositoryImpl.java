@@ -1,6 +1,6 @@
 package com.github.mehrdadf7.javamvprx.api;
 
-import com.github.mehrdadf7.javamvprx.models.NewsApiResponse;
+import com.github.mehrdadf7.javamvprx.models.NewsResponse;
 import com.github.mehrdadf7.okhttp.OkHttpInjector;
 
 import io.reactivex.Observable;
@@ -11,23 +11,23 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsApiResponse> {
+public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsResponse> {
 
-    private ObservableEmitter<NewsApiResponse> responseEmitter;
+    private ObservableEmitter<NewsResponse> responseEmitter;
 
     @Override
-    public Observable<NewsApiResponse> getNews() {
-        downloadData(new RemoteNewsDataRepository(OkHttpInjector.getHttpClient()));
-        return Observable.create(new ObservableOnSubscribe<NewsApiResponse>() {
+    public Observable<NewsResponse> getNews() {
+        downloadData(new NewsRepositoryData(OkHttpInjector.getHttpClient()));
+        return Observable.create(new ObservableOnSubscribe<NewsResponse>() {
             @Override
-            public void subscribe(ObservableEmitter<NewsApiResponse> emitter) {
+            public void subscribe(ObservableEmitter<NewsResponse> emitter) {
                 NewsRepositoryImpl.this.responseEmitter = emitter;
             }
         });
     }
 
-    private void downloadData(RemoteNewsDataRepository remoteNewsDataRepository) {
-        remoteNewsDataRepository.getNews()
+    private void downloadData(NewsRepositoryData newsRepositoryData) {
+        newsRepositoryData.getNews()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this);
@@ -37,8 +37,8 @@ public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsApiRespo
     public void onSubscribe(Disposable d) {}
 
     @Override
-    public void onNext(NewsApiResponse newsApiResponse) {
-        responseEmitter.onNext(newsApiResponse);
+    public void onNext(NewsResponse newsResponse) {
+        responseEmitter.onNext(newsResponse);
         responseEmitter.onComplete();
     }
 

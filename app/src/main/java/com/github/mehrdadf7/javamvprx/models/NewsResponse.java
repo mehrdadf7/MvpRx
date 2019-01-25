@@ -3,12 +3,12 @@ package com.github.mehrdadf7.javamvprx.models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewsApiResponse {
+public class NewsResponse {
 
     private String status;
     private int totalResults;
 
-    private List<NewsViewModel> articles = new ArrayList<>();
+    private List<News> articles = new ArrayList<>();
 
     public String getStatus() {
         return status;
@@ -26,11 +26,11 @@ public class NewsApiResponse {
         this.totalResults = totalResults;
     }
 
-    public List<NewsViewModel> getArticles() {
+    public List<News> getArticles() {
         return articles;
     }
 
-    public void setArticles(List<NewsViewModel> articles) {
+    public void setArticles(List<News> articles) {
         this.articles = articles;
     }
 }

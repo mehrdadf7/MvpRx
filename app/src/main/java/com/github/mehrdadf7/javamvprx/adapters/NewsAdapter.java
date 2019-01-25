@@ -10,16 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mehrdadf7.javamvprx.R;
-import com.github.mehrdadf7.javamvprx.models.NewsViewModel;
+import com.github.mehrdadf7.javamvprx.models.News;
 
 import java.util.List;
 import java.util.Random;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
 
-    private List<NewsViewModel> list;
+    private List<News> list;
 
-    public NewsAdapter(List<NewsViewModel> list) {
+    public NewsAdapter(List<News> list) {
         this.list = list;
     }
 
@@ -51,10 +51,10 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             description = itemView.findViewById(R.id.description);
         }
 
-        public void bind(final NewsViewModel newsViewModel) {
-            color      .setText(newsViewModel.getTitle().substring(0, 1));
-            title      .setText(newsViewModel.getTitle());
-            description.setText(newsViewModel.getDescription());
+        public void bind(News news) {
+            color      .setText(news.getTitle().substring(0, 1));
+            title      .setText(news.getTitle());
+            description.setText(news.getDescription());
 
             Random random = new Random();
             color.getBackground().setColorFilter(

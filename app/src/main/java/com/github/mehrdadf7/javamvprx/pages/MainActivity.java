@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.github.mehrdadf7.javamvprx.R;
 import com.github.mehrdadf7.javamvprx.adapters.NewsAdapter;
-import com.github.mehrdadf7.javamvprx.models.NewsViewModel;
+import com.github.mehrdadf7.javamvprx.models.News;
 import com.github.mehrdadf7.javamvprx.api.NewsRepositoryImpl;
 
 import java.util.List;
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void showNews(List<NewsViewModel> newsViewModels) {
+    public void showNews(List<News> newsViewModels) {
         recyclerView.setAdapter(new NewsAdapter(newsViewModels));
         Log.e(TAG, "showNews: " + newsViewModels.size());
     }

@@ -1,6 +1,6 @@
 package com.github.mehrdadf7.javamvprx.models;
 
-public class NewsViewModel {
+public class News {
 
     private String title;
     private String description;
