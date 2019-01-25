@@ -1,7 +1,5 @@
 package com.github.mehrdadf7.javamvprx.home.model.repo;
 
-import android.content.Context;
-
 import com.github.mehrdadf7.javamvprx.home.model.NewsApiResponse;
 import com.github.mehrdadf7.javamvprx.home.model.repo.remote.RemoteNewsDataRepository;
 import com.github.mehrdadf7.okhttp.OkHttpInjector;
@@ -15,12 +13,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsApiResponse> {
-
-    private Context context;
-
-    public NewsRepositoryImpl(Context context) {
-        this.context = context;
-    }
 
     private ObservableEmitter<NewsApiResponse> responseEmitter;
 
