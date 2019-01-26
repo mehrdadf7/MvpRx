@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.github.mehrdadf7.javamvprx.R;
 import com.github.mehrdadf7.javamvprx.adapters.NewsAdapter;
-import com.github.mehrdadf7.javamvprx.models.News;
 import com.github.mehrdadf7.javamvprx.api.NewsRepositoryImpl;
+import com.github.mehrdadf7.javamvprx.models.News;
 
 import java.util.List;
 
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         presenter = new MainPresenter(new NewsRepositoryImpl());
-
     }
 
     @Override
@@ -42,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     protected void onStop() {
-        super.onStop();
         presenter.detachView();
+        super.onStop();
     }
 
     @Override

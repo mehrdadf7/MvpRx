@@ -17,16 +17,16 @@ public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsResponse
 
     @Override
     public Observable<NewsResponse> getNews() {
-        downloadData(new NewsRequest(OkHttpInjector.getHttpClient()));
         return Observable.create(new ObservableOnSubscribe<NewsResponse>() {
             @Override
             public void subscribe(ObservableEmitter<NewsResponse> emitter) {
                 NewsRepositoryImpl.this.responseEmitter = emitter;
+                getData(new NewsRequest(OkHttpInjector.getHttpClient()));
             }
         });
     }
 
-    private void downloadData(NewsRequest newsRequest) {
+    private void getData(NewsRequest newsRequest) {
         newsRequest.getNews()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
