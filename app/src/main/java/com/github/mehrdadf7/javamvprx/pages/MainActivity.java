@@ -47,9 +47,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void showNews(List<News> newsViewModels) {
-        recyclerView.setAdapter(new NewsAdapter(newsViewModels));
-        Log.e(TAG, "showNews: " + newsViewModels.size());
+    public void showNews(List<News> newsList) {
+        recyclerView.setAdapter(new NewsAdapter(newsList));
+        Log.e(TAG, "showNews: " + newsList.size());
     }
 
     @Override
