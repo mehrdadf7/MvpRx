@@ -4,10 +4,8 @@ import com.github.mehrdadf7.javamvprx.models.NewsResponse;
 import com.github.mehrdadf7.okhttp.HttpStructure;
 
 import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
-public class NewsRequest implements NewsDataSource {
+public class NewsRequest implements ApiInterface {
 
     private HttpStructure httpStructure;
 

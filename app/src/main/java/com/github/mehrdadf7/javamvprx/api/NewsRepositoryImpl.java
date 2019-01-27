@@ -11,7 +11,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class NewsRepositoryImpl implements NewsDataSource, Observer<NewsResponse> {
+public class NewsRepositoryImpl implements ApiInterface, Observer<NewsResponse> {
 
     private ObservableEmitter<NewsResponse> responseEmitter;
 

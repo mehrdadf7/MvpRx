@@ -4,6 +4,6 @@ import com.github.mehrdadf7.javamvprx.models.NewsResponse;
 
 import io.reactivex.Observable;
 
-public interface NewsDataSource {
+public interface ApiInterface {
     Observable<NewsResponse> getNews();
 }

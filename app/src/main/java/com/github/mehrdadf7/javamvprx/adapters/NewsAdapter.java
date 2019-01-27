@@ -51,7 +51,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
             description = itemView.findViewById(R.id.description);
         }
 
-        public void bind(News news) {
+        public void bind(final News news) {
             color      .setText(news.getTitle().substring(0, 1));
             title      .setText(news.getTitle());
             description.setText(news.getDescription());
@@ -64,6 +64,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
                             random.nextInt(255)
                     ), PorterDuff.Mode.SRC_ATOP
             );
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                }
+            });
 
         }
 

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         setContentView(R.layout.activity_main);
         progressBar  = findViewById(R.id.progressBar);
         recyclerView = findViewById(R.id.recyclerView);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         presenter = new MainPresenter(new NewsRepositoryImpl());
     }
